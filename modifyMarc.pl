@@ -53,12 +53,15 @@ foreach (@identifier_file)
 
 	if ($identifier[4])
 	{
-	$fh->print("\n=955  \\\\\$b$identifier[2]\$q$identifier[1]\$v$identifier[4]\n=856  \\\\\$u http://www.archive.org/details/$identifier[1]\n\n"); 
+	$fh->print("\n=955  \\\\\$b$identifier[2]\$q$identifier[1]\$v$identifier[4]"); 
 	}
+
 	else
 	{
-	$fh->print("$_\n=955  \\\\\$b$identifier[2]\$q$identifier[1]\n=856  \\\\\$u http://www.archive.org/details/$identifier[1]\n\n")
+	$fh->print("\n=955  \\\\\$b$identifier[2]\$q$identifier[1]");
 	}
+
+	$fh->print("\n\n"); 
 
 }
 #Close output file
