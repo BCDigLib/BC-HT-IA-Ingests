@@ -47,8 +47,12 @@ sub main
 sub showUsage
 {
     print "\nUsage:\n\n";
-    print "getZipFiles.pl ids filetype\n\n";
-    print "Where\nids is file containing IA ids\n\nfiletype can be\nABBYY Full text -> abbyy\nSingle PDF -> pdf\nSingle Page Original JP2 -> orig\nSingle Page Cropped JP2 -> jp2\n";
+    print "getIAFiles.pl ids filetype\n\n";
+    print "Where\nids is file containing IA ids\n\nfiletype can be
+    ABBYY Full text -> abbyy
+    Single PDF -> pdf
+    Single Page Original JP2 -> orig
+    Single Page Cropped JP2 -> jp2\n";
     
     exit 1;
 }
