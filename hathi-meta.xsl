@@ -4,13 +4,13 @@
   <xsl:output method="text"/>
     
     <xsl:template match="/records">
+        <xsl:text>identifier|ark|link|volume|title&#10;</xsl:text>
         <xsl:apply-templates select="metadata"/>
         
         
     </xsl:template>
     
     <xsl:template match="metadata">
-        <xsl:value-of select="call_number"/><xsl:text>BCL01|</xsl:text>
         <xsl:value-of select="identifier"/><xsl:text>|</xsl:text>
         <xsl:value-of select="identifier-ark"/><xsl:text>|</xsl:text>
         <xsl:value-of select="identifier-access"/><xsl:text>|</xsl:text>
