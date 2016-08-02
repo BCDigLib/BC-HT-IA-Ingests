@@ -23,6 +23,9 @@ $fh->close();
 sub hathi
 {
 	open (HATHI_FILE, $hathi_files);
+	
+	$fh->print("vol_id\taccess\trights\tHTrecNo\tenum_chron\tsource\talma\toclc\tisbn\tissn\tlccn\ttitle\timprint\trights_det_reason\tlast_update\tgov_doc\tpub_date\tpub_place\tlang\tfmt\n");	
+
 	while (<HATHI_FILE>) 
 	{ 
 		my $out_line=$_;
