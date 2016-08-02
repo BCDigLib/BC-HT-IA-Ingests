@@ -13,6 +13,8 @@ my $meta_file = IO::File->new('ia-metadata.xml', 'w')
 	or die "unable to open output file for writing: $!";
 binmode($meta_file, ':utf8');
 
+$meta_file -> print('<records>');
+
 while (<>)
 	{
 		chomp;
@@ -26,6 +28,7 @@ while (<>)
 		$ua->env_proxy;
 
 		my $request  = HTTP::Request->new( GET => 'http://www.archive.org/download/'.$id.'/' );
+		print "$request\n";
 		my $response = $ua->request($request);
 		if ( $response->is_success and $response->previous ) {
   			  print $request->url, ' redirected to ', $response->request->uri, "\n";			
@@ -33,9 +36,11 @@ while (<>)
 		my $meta=get($response->request->uri.$id.'_meta.xml');
 
 		print "$meta\n";
+		$meta=~s/\<\?xml version="1\.0" encoding="UTF-8"\?\>//;
 		$meta_file -> print($meta);
 
-	}                                    
+	}    
+$meta_file -> print('</records>');                                
 
 $meta_file->close();
 =pod
