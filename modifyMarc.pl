@@ -51,9 +51,9 @@ foreach (@identifier_file)
 	my @identifier=split('\t',$_);
 	$fh->print("$records_hash{$identifier[0]}");
 
-	if ($identifier[4])
+	if ($identifier[3])
 	{
-	$fh->print("\n=955  \\\\\$b$identifier[2]\$q$identifier[1]\$v$identifier[4]"); 
+	$fh->print("\n=955  \\\\\$b$identifier[2]\$q$identifier[1]\$v$identifier[3]"); 
 	}
 
 	else
